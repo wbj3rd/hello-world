@@ -1,7 +1,7 @@
 name: Automerge
 
 on: check_run
-  type: [completed]
+  types: [completed]
 
 jobs:
   checkForSuccess:
@@ -12,7 +12,7 @@ jobs:
         uses: arup-group/action-all-checks-passed@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
   # is updated in any way (opened, synchronized, reopened, edited).
