@@ -17,5 +17,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_label: "feature, automated pr"
           pr_title: "[Example] Simple demo"
-on:
-  pull_request:
