@@ -1,7 +1,7 @@
 name: Automerge
 
 on: check_run
-  type: [ completed ]
+  type: completed
 
 jobs:
   checkForSuccess:
