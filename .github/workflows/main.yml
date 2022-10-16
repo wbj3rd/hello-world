@@ -19,7 +19,7 @@ jobs:
       - name: Trigger next workflow
         if: success()
         uses: peter-evans/repository-dispatch@v1
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           repository: ${{ github.repository }}
           event-type: trigger-workflow-2
