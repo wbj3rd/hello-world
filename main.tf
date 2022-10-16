@@ -36,7 +36,7 @@ provider "aws" {
 }
 variable "walter" {
   type = string
-  default = "Hey There. I did it."
+  default = "Hey There. I did it. Atlantis Unlocked!"
 }
 
 output "me" {
