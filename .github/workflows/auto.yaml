@@ -1,7 +1,8 @@
 name: Automerge
 
-on: check_run
-  types: [completed]
+on:
+  check_run:
+    types: [rerequested, completed]
 
 jobs:
   checkForSuccess:
