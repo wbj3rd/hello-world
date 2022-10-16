@@ -19,7 +19,7 @@ jobs:
           pr_title: "Auto Created PR with Label"
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Trigger next workflow
-        uses: 
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           event-type: trigger-workflow-2
