@@ -1,7 +1,7 @@
 name: Comments
 on:
-  pull_request:
-
+  repository_dispatch:
+    types: [my-event]
 jobs:
   example_comment_pr:
     runs-on: ubuntu-latest
