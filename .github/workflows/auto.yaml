@@ -5,7 +5,7 @@ on: check_run
 
 jobs:
   checkForSuccess:
-    name: success-check
+    name: success-check-soft-sci
     runs-on: ubuntu-latest
     steps:
       - name: Check
