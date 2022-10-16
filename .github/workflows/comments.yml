@@ -1,7 +1,6 @@
 name: Comments
 on:
   pull_request:
-    types: [opened]
 
 jobs:
   example_comment_pr:
