@@ -1,34 +1,33 @@
-name: Automerge
+# name: Automerge
 
-on:
-  # Try enabling auto-merge for all open pull requests. (Only recommended for testing.)
-  push:
-  repository_dispatch:
-    types: [trigger-workflow-3]
-  # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
-  # a required label is applied or when a “do not merge” label is removed, or when a pull request
-  # is updated in any way (opened, synchronized, reopened, edited).
-  pull_request_target:
-    types:
-      - opened
-      - labeled
+# on:
+
+#   repository_dispatch:
+#     types: [trigger-workflow-3]
+#   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
+#   # a required label is applied or when a “do not merge” label is removed, or when a pull request
+#   # is updated in any way (opened, synchronized, reopened, edited).
+#   pull_request_target:
+#     types:
+#       - opened
+#       - labeled
 
 
-  # Try enabling auto-merge for the specified pull request or all open pull requests if none is specified.
-  workflow_dispatch:
-    inputs:
-      pull-request:
-        description: Pull Request Number
-        required: false
+#   # Try enabling auto-merge for the specified pull request or all open pull requests if none is specified.
+#   workflow_dispatch:
+#     inputs:
+#       pull-request:
+#         description: Pull Request Number
+#         required: false
 
-jobs:
-  automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: reitermarkus/automerge@v2
-        with:
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: false
+# jobs:
+#   automerge:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: reitermarkus/automerge@v2
+#         with:
+#           merge-method: rebase
+#           do-not-merge-labels: never-merge
+#           required-labels: automerge
+#           pull-request: ${{ github.event.inputs.pull-request }}
+#           dry-run: false
