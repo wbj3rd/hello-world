@@ -14,6 +14,5 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "master"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_label: "feature, automated pr, automerge"
           pr_title: "Create PR, Add Label"

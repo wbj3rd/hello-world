@@ -1,7 +1,6 @@
 name: Comments
 on:
   pull_request:
-    branches: test
 
 jobs:
   example_comment_pr:
