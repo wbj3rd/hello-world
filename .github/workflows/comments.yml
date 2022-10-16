@@ -1,19 +1,22 @@
-# name: Comments
-# on:
-#   pull_request:
-#     types: [opened]
-#     branches: atlantis
+name: Comments
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - ready_for_review    
+    branches: atlantis
 
-# jobs:
-#   example_comment_pr:
-#     runs-on: ubuntu-latest
-#     name: An example job to comment a PR Whoop
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-#       - name: Comment PR
-#         uses: thollander/actions-comment-pull-request@v1
-#         with:
-#           message: |
-#             atlantis plan
+jobs:
+  example_comment_pr:
+    runs-on: ubuntu-latest
+    name: An example job to comment a PR Whoop
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            atlantis plan
 
