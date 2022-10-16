@@ -1,6 +1,8 @@
 name: Pull Request Action
 on:
   push:
+    branches:
+      - atlantis
 
 jobs:
   create-pull-request:
@@ -12,7 +14,7 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "master"
-          pr_label: "feature, automated pr, automerge"
-          pr_body: "atlantis plan automate" 
+          pr_label: "automerge"
+          pr_body: "atlantis plan" 
           pr_title: "Auto Created PR with Label"
           github_token: ${{ secrets.GITHUB_TOKEN }}  
