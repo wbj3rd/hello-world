@@ -19,6 +19,4 @@ jobs:
           pr_label: "feature, automated pr, automerge"
           pr_body: "atlantis plan automate" 
           pr_title: "Auto Created PR with Label"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_label: "feature, automated pr, automerge"
-          pr_title: "[Example] Simple demo"     
+          github_token: ${{ secrets.GITHUB_TOKEN }}  
