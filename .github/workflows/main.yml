@@ -15,6 +15,6 @@ jobs:
         with:
           destination_branch: "master"
           pr_label: "automerge"
-          pr_body: "atlantis plan automate" 
+          pr_body: "atlantis plan" 
           pr_title: "Auto Created PR with Label"
           github_token: ${{ secrets.GITHUB_TOKEN }}  
