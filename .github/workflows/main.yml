@@ -15,4 +15,11 @@ jobs:
         with:
           destination_branch: "master"
           pr_label: "feature, automated pr, automerge"
-          pr_title: "Create PR, Add Label"
+          pr_title: "Auto Created PR with Label"
+      - name: Trigger next workflow
+        if: success()
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          repository: ${{ github.repository }}
+          event-type: trigger-workflow-2
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'          

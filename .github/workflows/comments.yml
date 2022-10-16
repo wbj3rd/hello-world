@@ -1,7 +1,12 @@
 name: Comments
 on:
   pull_request:
-
+  repository_dispatch:
+    types: [trigger-workflow-2]
+  pull_request_target:
+    types:
+      - opened
+      - labeled
 jobs:
   example_comment_pr:
     runs-on: ubuntu-latest
@@ -14,3 +19,10 @@ jobs:
         with:
           message: |
             atlantis plan
+      - name: Trigger next workflow
+        if: success()
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          repository: ${{ github.repository }}
+          event-type: trigger-workflow-3
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'                 
