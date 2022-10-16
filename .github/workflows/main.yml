@@ -23,6 +23,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
         with:
           repository: ${{ github.repository }}
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
           event-type: trigger-workflow-2
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'          
