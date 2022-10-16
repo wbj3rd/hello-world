@@ -18,7 +18,9 @@ jobs:
           pr_label: "feature, automated pr"
           pr_title: "[Example] Simple demo"
 
-on: pull_request
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
   example_comment_pr:
