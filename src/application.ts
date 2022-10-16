@@ -16,7 +16,7 @@ export class HelloWorldApplication extends RestApplication {
     // Learn more about the concept of Sequence in our docs:
     //   http://loopback.io/doc/en/lb4/Sequence.html
     this.handler(({response}, sequence) => {
-      sequence.send(response, 'Hello Atlantis HTTPS HAHAHA WOW OKKKKKKKKKKKK!');
+      sequence.send(response, 'Hello Atlantis HTTPS HAHAHA WOW OKKKKKKKKKKKsssK ULOCKED');
     });
   }
 
