@@ -1,6 +1,8 @@
 name: Pull Request Action
 on:
   push:
+    branches:
+      - atlantis
 
 jobs:
   create-pull-request:
