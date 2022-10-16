@@ -8,14 +8,12 @@ jobs:
   create-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "master"
-          pr_label: "feature, automated pr, automerge"
-          pr_body: "atlantis plan automate" 
+          pr_label: "automerge"
+          pr_body: "atlantis plan" 
           pr_title: "Auto Created PR with Label"
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Trigger next workflow
