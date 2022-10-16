@@ -1,16 +1,16 @@
-name: Comments
-on:
-  repository_dispatch:
-    types: [my-event]
-jobs:
-  example_comment_pr:
-    runs-on: ubuntu-latest
-    name: An example job to comment a PR
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v1
-        with:
-          message: |
-            atlantis plan
+# name: Comments
+# on:
+#   repository_dispatch:
+#     types: [my-event]
+# jobs:
+#   example_comment_pr:
+#     runs-on: ubuntu-latest
+#     name: An example job to comment a PR
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Comment PR
+#         uses: thollander/actions-comment-pull-request@v1
+#         with:
+#           message: |
+#             atlantis plan

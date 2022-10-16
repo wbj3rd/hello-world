@@ -1,8 +1,12 @@
 name: Pull Request Action
 on:
   push:
+  pull_request_target:
+    types:
+      - opened
+      - unlabeled  
     branches:
-      - atlantis
+      - main
 
 jobs:
   create-pull-request:
@@ -17,10 +21,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_label: "feature, automated pr, automerge"
           pr_title: "[Example] Simple demo"
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v2
+  example_comment_pr:
+    runs-on: ubuntu-latest
+    name: An example job to comment a PR
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
         with:
-          token:  ${{ secrets.REPO_ACCESS_TOken }}
-          repository: wbj3rd/hello-world
-          event-type: my-event
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'          
+          message: |
+            atlantis plan         
