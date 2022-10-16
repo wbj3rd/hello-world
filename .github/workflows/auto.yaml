@@ -1,22 +1,29 @@
 name: Automerge
 
-on:
-  workflow_run:
-    workflows: [Comments]
-    types:
-      - completed
+on: check_run
+  type: [completed]
+name: success-check
+jobs:
+  checkForSuccess:
+    name: success-check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check
+      uses: arup-group/action-all-checks-passed@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # Try enabling auto-merge for a pull request when a draft is marked as “ready for review”, when
   # a required label is applied or when a “do not merge” label is removed, or when a pull request
   # is updated in any way (opened, synchronized, reopened, edited).
 
-jobs:
-  automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: reitermarkus/automerge@v2
-        with:
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+# jobs:
+#   automerge:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: reitermarkus/automerge@v2
+#         with:
+#           merge-method: rebase
+#           do-not-merge-labels: never-merge
+#           required-labels: automerge
+#           pull-request: ${{ github.event.inputs.pull-request }}
+#           dry-run: true
