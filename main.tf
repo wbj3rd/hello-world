@@ -36,7 +36,7 @@ provider "aws" {
 }
 variable "walter" {
   type = string
-  default = "us"
+  default = "Hey There"
 }
 
 output "me" {
